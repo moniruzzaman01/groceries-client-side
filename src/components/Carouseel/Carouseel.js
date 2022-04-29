@@ -1,10 +1,10 @@
 import React from "react";
 import banner1 from "../../images/banner/banner-1.jpg";
-import banner2 from "../../images/banner/banner-2.png";
-import banner3 from "../../images/banner/banner-3.png";
-import banner4 from "../../images/banner/banner-4.png";
-import banner5 from "../../images/banner/banner-5.png";
-import banner6 from "../../images/banner/banner-6.png";
+import banner2 from "../../images/banner/banner-2.jpg";
+import banner3 from "../../images/banner/banner-3.jpg";
+import banner4 from "../../images/banner/banner-4.jpg";
+import banner5 from "../../images/banner/banner-5.jpg";
+import banner6 from "../../images/banner/banner-6.jpg";
 
 const Carouseel = () => {
   return (
