@@ -1,0 +1,21 @@
+.footer-container {
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ececec;
+  padding: 0 20px;
+  min-height: 30vh;
+}
+.footer-container .social-icons {
+  width: 33%;
+}
+.footer-container .location {
+  width: 33%;
+}
+.copyright .name {
+  font-weight: 700;
+}
+.location {
+  margin: 0 20px;
+}

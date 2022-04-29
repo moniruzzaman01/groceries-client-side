@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "img": "",
+    "name": "rice",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
+    "price": "$20",
+    "quantity": "30",
+    "supplier_name": "Karim Mia"
+  },
+  {
+    "id": "2",
+    "img": "",
+    "name": "dal",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
+    "price": "$25",
+    "quantity": "20",
+    "supplier_name": "Karim Molla"
+  },
+  {
+    "id": "3",
+    "img": "",
+    "name": "flour",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
+    "price": "$15",
+    "quantity": "10",
+    "supplier_name": "Kabir Mia"
+  },
+  {
+    "id": "4",
+    "img": "",
+    "name": "Fruit",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
+    "price": "$50",
+    "quantity": "40",
+    "supplier_name": "Tormuj Ali"
+  },
+  {
+    "id": "5",
+    "img": "",
+    "name": "Honey",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
+    "price": "$65",
+    "quantity": "10",
+    "supplier_name": "Karim Mia"
+  },
+  {
+    "id": "6",
+    "img": "",
+    "name": "spices",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
+    "price": "$20",
+    "quantity": "30",
+    "supplier_name": "Karim Molla"
+  }
+]
