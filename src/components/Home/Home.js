@@ -9,18 +9,26 @@ const Home = () => {
   return (
     <div>
       <Carouseel></Carouseel>
-      <h2 className="text-center my-5">Available Items-{items.length}</h2>
+      <h1 className="Inventory-item-header">Available Items-{items.length}</h1>
       <div className="home-inventory-items container mb-4">
-        {items.map((item, key) => {
+        {items.slice(0, 6).map((item, key) => {
           return (
             <div key={key} className="single-item">
-              <img src={item.img} width="100%" alt="" />
-              <div className="ms-2">
-                <p>{item.name}</p>
-                <p>{item.price}</p>
-                <small>{item.description}</small>
-                <p>{item.quantity}</p>
-                <p>{item.supplier_name}</p>
+              <img src={item.img} alt="" />
+              <div className="details">
+                <div className="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3>{item.name}</h3>
+                    <p>{item.supplier_name}</p>
+                  </div>
+                  <p style={{ color: "tomato" }} className="me-5">
+                    {item.price}
+                  </p>
+                </div>
+                <p>Quantity: {item.quantity}kg</p>
+                <small className="mt-2 d-block" title={item.description}>
+                  {item.description.slice(0, 100) + "..."}
+                </small>
               </div>
             </div>
           );

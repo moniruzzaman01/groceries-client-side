@@ -7,13 +7,23 @@
   padding: 0 20px;
   min-height: 30vh;
 }
-.footer-container .social-icons {
+@media screen and (max-width: 599px) {
+  .footer-container {
+    display: block;
+  }
+}
+.footer-container .copyright-container {
+  margin: 0 auto;
   width: 33%;
 }
 .footer-container .location {
   width: 33%;
 }
+.footer-container .social-icons {
+  width: 33%;
+}
 .copyright {
+  text-align: center;
   font-size: 15px;
   margin-top: 20px;
 }

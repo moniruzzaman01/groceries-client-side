@@ -3,10 +3,31 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
 }
+@media screen and (max-width: 599px) {
+  .home-inventory-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.Inventory-item-header {
+  text-align: center;
+  margin: 30px 0;
+  font-weight: 900;
+}
 .single-item {
+  border-radius: 10px;
   transition: all 0.2s;
+  padding: 15px;
+}
+.single-item img {
+  height: 250px;
 }
 .single-item:hover {
-  border-radius: 10px;
   box-shadow: 0 0 10px 10px #7c7c7c;
+}
+.single-item .details {
+  padding: 10px;
+  margin-top: 10px;
+}
+.single-item .details p {
+  margin: 0;
 }
