@@ -1,10 +1,18 @@
+import { signOut } from "firebase/auth";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../firebase.init";
 import "./Header.css";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const handleLogout = () => {
+    signOut(auth);
+  };
+  // console.log(user.emailVerified);
   return (
-    <nav className="navbar fixed-top navbar-expand-lg">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <div className="brand-container">
           <div className="brand toggle">
@@ -33,24 +41,42 @@ const Header = () => {
             </li>
           </ul>
           <ul className="right-items">
-            <li className="nav-item">
-              <Link to="/my-item">My Items</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/add-item">Add Item</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/manage-item">Manage Item</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/logout">LogOut</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/login">Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/sign-up">SignUp</Link>
-            </li>
+            {user ? (
+              <>
+                <li className="nav-item">
+                  <Link to="/my-item">My Items</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/add-item">Add Item</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/manage-item">Manage Item</Link>
+                </li>
+                <li className="nav-item">
+                  <button
+                    onClick={handleLogout}
+                    style={{
+                      backgroundColor: "transparent",
+                      fontWeight: "700",
+                      marginTop: "-5px",
+                      color: "#7c7c7c",
+                    }}
+                    className="btn"
+                  >
+                    LogOut
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <Link to="/login">Login</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/sign-up">SignUp</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
       </div>

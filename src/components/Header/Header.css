@@ -1,6 +1,7 @@
 .navbar {
+  min-height: 10vh;
   width: 100%;
-  background-color: rgba(102, 255, 71, 0.2);
+  background-color: rgba(102, 255, 71, 0.7);
 }
 .brand-container {
   margin-right: 50px;
@@ -17,7 +18,7 @@
   text-align: right;
   margin-top: -8px;
   font-size: 11px;
-  color: #fff;
+  color: #000;
 }
 .navbar-nav {
   text-align: center;
@@ -29,7 +30,7 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
-  color: #fff;
+  color: #000;
   transition: all 0.2s;
 }
 .nav-item a:hover {
@@ -38,7 +39,7 @@
 .right-items {
   display: flex;
   list-style: none;
-  margin-top: 12px;
+  margin-bottom: -10px;
 }
 @media screen and (max-width: 990px) {
   .right-items {

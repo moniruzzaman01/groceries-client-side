@@ -1,17 +1,39 @@
 import React from "react";
 import "./SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Social-login/SocialLogin";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Spineer from "../Spineer/Spineer";
 
 const SignUp = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, {
+      sendEmailVerification: true,
+    });
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.pass.value;
+
+    createUserWithEmailAndPassword(email, password);
+  };
+  if (user) {
+    navigate(from, { replace: true });
+  }
   return (
     <div className="mx-auto my-5 container signup-form-container">
       <h1>Please Register Here!!!</h1>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <div className="form-group mb-3">
           <label htmlFor="exampleInputName1">Your Name</label>
           <input
             type="text"
+            name="name"
             className="form-control"
             id="exampleInputName1"
             placeholder="Your Name"
@@ -21,18 +43,22 @@ const SignUp = () => {
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
+            name="email"
             className="form-control"
             id="exampleInputEmail1"
             placeholder="Enter email"
+            required
           />
         </div>
         <div className="form-group mb-3">
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
+            name="pass"
             className="form-control"
             id="exampleInputPassword1"
             placeholder="Password"
+            required
           />
         </div>
         <p>
@@ -41,6 +67,19 @@ const SignUp = () => {
             Login
           </Link>
         </p>
+
+        {loading ? <Spineer /> : ""}
+        {error ? (
+          <p
+            style={{
+              color: "blue",
+            }}
+          >
+            {error.message}
+          </p>
+        ) : (
+          ""
+        )}
         <button type="submit" className="btn form-btn">
           SignUp
         </button>
