@@ -1,10 +1,30 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 import "./AddItem.css";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
   const handleAddForm = (event) => {
     event.preventDefault();
-    console.log("hello");
+    const productDetails = {
+      userName: event.target.user_name.value,
+      userEmail: event.target.user_email.value,
+      itemName: event.target.name.value,
+      quantity: event.target.quantity.value,
+      img_url: event.target.img_url.value,
+      price: event.target.price.value,
+      description: event.target.description.value,
+    };
+    fetch("http://localhost:5000/inventory-items", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(productDetails),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
   return (
     <div className="add-item-container">
@@ -13,19 +33,19 @@ const AddItem = () => {
         <div className="form-group mb-3">
           <input
             type="text"
-            name="user-name"
+            name="user_name"
             className="form-control"
-            placeholder="User Name"
             disabled
+            value={user.displayName}
           />
         </div>
         <div className="form-group mb-3">
           <input
             type="email"
-            name="user-email"
+            name="user_email"
             className="form-control"
-            placeholder="Enter email"
             disabled
+            value={user.email}
           />
         </div>
         <div className="form-group mb-3">
@@ -47,7 +67,7 @@ const AddItem = () => {
         <div className="form-group mb-3">
           <input
             type="text"
-            name="img-url"
+            name="img_url"
             className="form-control"
             placeholder="Product Image Url"
           />

@@ -11,17 +11,17 @@ const Home = () => {
       <Carouseel></Carouseel>
       <h1 className="Inventory-item-header">Available Items</h1>
       <div className="home-inventory-items container mb-4">
-        {items.slice(0, 6).map((item, key) => {
+        {items.slice(0, 10).map((item, key) => {
           return (
             <div key={key} className="single-item">
               <div className="img">
-                <img src={item.img} alt="" />
+                <img src={item.img_url} alt="" />
               </div>
               <div className="details">
                 <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <h3>{item.name}</h3>
-                    <p>Supplier: {item.supplier_name}</p>
+                    <h3>{item.itemName}</h3>
+                    <p>Supplier: {item.userName}</p>
                   </div>
                   <p style={{ color: "tomato" }} className="me-5">
                     {item.price}

@@ -3,12 +3,16 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../Social-login/SocialLogin";
 import "./Login.css";
 import auth from "../../firebase.init";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import Spineer from "../Spineer/Spineer";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [authUser, authLoading] = useAuthState(auth);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
@@ -20,7 +24,10 @@ const Login = () => {
 
     signInWithEmailAndPassword(email, password);
   };
-  if (user) {
+  if (authLoading) {
+    return <Spineer />;
+  }
+  if (authUser) {
     navigate(from, { replace: true });
   }
   return (
