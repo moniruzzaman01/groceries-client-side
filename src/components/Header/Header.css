@@ -19,7 +19,7 @@
   text-align: center;
 }
 .nav-item {
-  margin: 10px;
+  margin: 10px 10px;
 }
 .nav-item a {
   text-decoration: none;
@@ -30,4 +30,17 @@
 }
 .nav-item a:hover {
   color: salmon;
+}
+.right-items {
+  display: flex;
+  list-style: none;
+  margin-top: 12px;
+}
+@media screen and (max-width: 990px) {
+  .right-items {
+    text-align: center;
+    margin-right: 30px;
+    margin-top: -10px;
+    display: block;
+  }
 }

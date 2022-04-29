@@ -1,11 +1,11 @@
 import React from "react";
 
-const Banner = () => {
+const Logout = () => {
   return (
     <div>
-      <h1>Banner</h1>
+      <h1>Logout</h1>
     </div>
   );
 };
 
-export default Banner;
+export default Logout;

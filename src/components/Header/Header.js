@@ -29,10 +29,12 @@ const Header = () => {
               <Link to="/home">Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/my-item">My Items</Link>
+              <Link to="/contact">Contact</Link>
             </li>
+          </ul>
+          <ul className="right-items">
             <li className="nav-item">
-              <Link to="/login">Login</Link>
+              <Link to="/my-item">My Items</Link>
             </li>
             <li className="nav-item">
               <Link to="/add-item">Add Item</Link>
@@ -42,6 +44,9 @@ const Header = () => {
             </li>
             <li className="nav-item">
               <Link to="/logout">LogOut</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/login">Login</Link>
             </li>
             <li className="nav-item">
               <Link to="/sign-up">SignUp</Link>

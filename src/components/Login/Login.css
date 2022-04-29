@@ -1,0 +1,30 @@
+.login-form-container {
+  min-height: 45vh;
+  width: 50%;
+}
+.login-form-container h1 {
+  margin-top: 20vh;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 599px) {
+  .login-form-container {
+    width: 80%;
+  }
+}
+.link {
+  color: tomato;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+  color: tomato;
+}
+.form-btn {
+  background-color: #fff;
+  border: 1px solid tomato;
+  color: tomato;
+}
+.form-btn:hover {
+  background-color: tomato;
+  color: #fff;
+}
