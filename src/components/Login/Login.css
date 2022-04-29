@@ -3,10 +3,13 @@
   width: 50%;
 }
 .login-form-container h1 {
-  margin-top: 20vh;
+  margin-top: 15vh;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 599px) {
+  .login-form-container h1 {
+    margin: 0;
+  }
   .login-form-container {
     width: 80%;
   }
@@ -27,4 +30,9 @@
 .form-btn:hover {
   background-color: tomato;
   color: #fff;
+}
+.separator {
+  height: 2px;
+  width: 20%;
+  background-color: tomato;
 }

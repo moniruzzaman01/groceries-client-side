@@ -1,6 +1,7 @@
 import React from "react";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
+import SocialLogin from "../Social-login/SocialLogin";
 
 const SignUp = () => {
   return (
@@ -44,6 +45,12 @@ const SignUp = () => {
           SignUp
         </button>
       </form>
+      <div className="d-flex justify-content-center align-items-center my-4">
+        <div className="separator"></div>
+        <div className="mx-2">or</div>
+        <div className="separator"></div>
+      </div>
+      <SocialLogin />
     </div>
   );
 };

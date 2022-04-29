@@ -3,10 +3,13 @@
   width: 50%;
 }
 .signup-form-container h1 {
-  margin-top: 20vh;
+  margin-top: 15vh;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 599px) {
+  .signup-form-container h1 {
+    margin-top: 0;
+  }
   .signup-form-container {
     width: 80%;
   }
