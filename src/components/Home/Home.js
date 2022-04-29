@@ -14,21 +14,24 @@ const Home = () => {
         {items.slice(0, 6).map((item, key) => {
           return (
             <div key={key} className="single-item">
-              <img src={item.img} alt="" />
+              <div className="img">
+                <img src={item.img} alt="" />
+              </div>
               <div className="details">
                 <div className="d-flex justify-content-between align-items-center">
                   <div>
                     <h3>{item.name}</h3>
-                    <p>{item.supplier_name}</p>
+                    <p>Supplier: {item.supplier_name}</p>
                   </div>
                   <p style={{ color: "tomato" }} className="me-5">
                     {item.price}
                   </p>
                 </div>
-                <p>Quantity: {item.quantity}kg</p>
-                <small className="mt-2 d-block" title={item.description}>
+                <p>Quantity: {item.quantity}</p>
+                <span className="mt-2 d-block" title={item.description}>
                   {item.description.slice(0, 100) + "..."}
-                </small>
+                </span>
+                <button>Update</button>
               </div>
             </div>
           );

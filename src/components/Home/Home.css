@@ -18,16 +18,40 @@
   transition: all 0.2s;
   padding: 15px;
 }
+.single-item .img {
+  display: flex;
+}
 .single-item img {
+  margin: 0 auto;
   height: 250px;
 }
 .single-item:hover {
-  box-shadow: 0 0 10px 10px #7c7c7c;
+  box-shadow: 2px 2px 5px 5px #f3f3f3;
 }
 .single-item .details {
   padding: 10px;
   margin-top: 10px;
 }
+.single-item .details h3 {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
 .single-item .details p {
   margin: 0;
+  font-size: 15px;
+}
+
+.single-item .details span {
+  font-size: 14px;
+  font-weight: 300;
+}
+.details button {
+  border: none;
+  border-bottom: 1px solid tomato;
+  background-color: #fff;
+  color: tomato;
+  float: right;
+  font-size: 15px;
+  margin-right: 2px;
+  margin-top: -2px;
 }
