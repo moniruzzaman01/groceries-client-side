@@ -1,32 +1,33 @@
-.navbar-container {
-  height: 80px;
-  background: transparent;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.brand-container {
+  margin-right: 50px;
 }
-.navbar-container a {
-  text-decoration: none;
-  margin-right: 15px;
-  font-size: 18px;
-  font-weight: 500;
-  color: #7c7c7c;
-  transition: all 0.2s;
-}
-.navbar-container a:hover {
-  color: salmon;
-}
-.middle h2 {
+.brand h2 {
   font-size: 26px;
   letter-spacing: 2px;
   font-weight: 700;
   color: tomato;
   margin: 0;
 }
-.middle small {
+.brand small {
   display: block;
   text-align: right;
   margin-top: -8px;
   font-size: 11px;
   color: #7c7c7c;
+}
+.navbar-nav {
+  text-align: center;
+}
+.nav-item {
+  margin: 10px;
+}
+.nav-item a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #7c7c7c;
+  transition: all 0.2s;
+}
+.nav-item a:hover {
+  color: salmon;
 }
