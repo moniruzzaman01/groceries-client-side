@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div>
       <Carouseel></Carouseel>
-      <h1 className="Inventory-item-header">Available Items-{items.length}</h1>
+      <h1 className="Inventory-item-header">Available Items</h1>
       <div className="home-inventory-items container mb-4">
         {items.slice(0, 6).map((item, key) => {
           return (
