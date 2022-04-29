@@ -2,6 +2,7 @@ import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Spineer from "../Spineer/Spineer";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -17,6 +18,18 @@ const SocialLogin = () => {
   }
   return (
     <div>
+      {loading ? <Spineer /> : ""}
+      {error ? (
+        <p
+          style={{
+            color: "blue",
+          }}
+        >
+          {error.message}
+        </p>
+      ) : (
+        ""
+      )}
       <button className="btn form-btn" onClick={handleGoogleSignIn}>
         GoogleSignIn
       </button>
