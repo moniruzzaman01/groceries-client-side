@@ -13,6 +13,10 @@
 .footer-container .location {
   width: 33%;
 }
+.copyright {
+  font-size: 15px;
+  margin-top: 20px;
+}
 .copyright .name {
   font-weight: 700;
 }
