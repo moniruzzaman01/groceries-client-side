@@ -26,7 +26,7 @@ const SignUp = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div className="mx-auto my-5 container signup-form-container">
+    <div className="signup-form-container">
       <h1>Please Register Here!!!</h1>
       <form onSubmit={handleFormSubmit}>
         <div className="form-group mb-3">

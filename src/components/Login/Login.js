@@ -24,7 +24,7 @@ const Login = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div className="mx-auto my-5 container login-form-container">
+    <div className="login-form-container">
       <h1>Please Login Here!!!</h1>
       <form onSubmit={handleFormSubmit}>
         <div className="form-group mb-3">

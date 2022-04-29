@@ -37,7 +37,7 @@ const Header = () => {
               <Link to="/home">Home</Link>
             </li>
             <li className="nav-item">
-              <Link to="/contact">Contact</Link>
+              <Link to="/blogs">Blogs</Link>
             </li>
           </ul>
           <ul className="right-items">
@@ -59,7 +59,7 @@ const Header = () => {
                       backgroundColor: "transparent",
                       fontWeight: "700",
                       marginTop: "-5px",
-                      color: "#7c7c7c",
+                      color: "tomato",
                     }}
                     className="btn"
                   >
