@@ -16,8 +16,10 @@ const Header = () => {
       <div className="container-fluid">
         <div className="brand-container">
           <div className="brand toggle">
-            <h2>Groceries</h2>
-            <small>Your daily needs</small>
+            <Link style={{ textDecoration: "none" }} to="/">
+              <h2>Groceries</h2>
+              <small>Your daily needs</small>
+            </Link>
           </div>
         </div>
         <button
@@ -48,9 +50,6 @@ const Header = () => {
                 </li>
                 <li className="nav-item">
                   <Link to="/add-item">Add Item</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/manage-item">Manage Item</Link>
                 </li>
                 <li className="nav-item">
                   <button

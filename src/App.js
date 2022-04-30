@@ -39,7 +39,7 @@ function App() {
           }
         ></Route>
         <Route
-          path="/manage-item"
+          path="/manage-item/:id"
           element={
             <RequireAuth>
               <ManageItem />

@@ -1,0 +1,9 @@
+.manage-item-container {
+  width: 50%;
+  margin: 15vh auto 5vh auto;
+}
+@media screen and (max-width: 599px) {
+  .manage-item-container {
+    width: 80%;
+  }
+}

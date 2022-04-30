@@ -2,10 +2,16 @@ import React from "react";
 import "./Home.css";
 import useInventoryItems from "../../hooks/useInventoryItems";
 import Carouseel from "../Carouseel/Carouseel";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [items] = useInventoryItems();
-  console.log(items[0]?._id);
+  // console.log(items[0]?._id);
+  const navigate = useNavigate();
+  const handleManageBtn = (id) => {
+    // console.log(id);
+    navigate(`/manage-item/${id}`);
+  };
   return (
     <div>
       <Carouseel></Carouseel>
@@ -31,7 +37,9 @@ const Home = () => {
                 <span className="mt-2 d-block" title={item.description}>
                   {item.description.slice(0, 100) + "..."}
                 </span>
-                <button>Update</button>
+                <button onClick={(e) => handleManageBtn(item._id)}>
+                  Manage
+                </button>
               </div>
             </div>
           );
