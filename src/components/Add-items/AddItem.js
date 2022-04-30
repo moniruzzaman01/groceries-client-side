@@ -42,7 +42,7 @@ const AddItem = () => {
             name="user_name"
             className="form-control"
             disabled
-            value={user.displayName}
+            value={user?.displayName || user.email.split("@")[0]}
           />
         </div>
         <div className="form-group mb-3">

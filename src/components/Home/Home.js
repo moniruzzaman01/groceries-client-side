@@ -5,12 +5,12 @@ import Carouseel from "../Carouseel/Carouseel";
 
 const Home = () => {
   const [items] = useInventoryItems();
-  //   console.log(items);
+  console.log(items[0]?._id);
   return (
     <div>
       <Carouseel></Carouseel>
       <h1 className="Inventory-item-header">Available Items</h1>
-      <div className="home-inventory-items container mb-4">
+      <div className="home-inventory-items container mb-5">
         {items.slice(0, 6).map((item, key) => {
           return (
             <div key={key} className="single-item">
