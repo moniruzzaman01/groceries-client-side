@@ -8,7 +8,7 @@ const InventoryItems = () => {
 
   const handleDelete = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/deleteById/${id}`, {
+    fetch(`https://enigmatic-lowlands-04336.herokuapp.com/deleteById/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

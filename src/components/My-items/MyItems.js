@@ -8,7 +8,7 @@ const MyItems = () => {
   const [user] = useAuthState(auth);
   useEffect(() => {
     const email = { userEmail: user.email };
-    fetch("http://localhost:5000/itemsByEmail", {
+    fetch("https://enigmatic-lowlands-04336.herokuapp.com/itemsByEmail", {
       method: "POST",
       headers: {
         "content-type": "application/json",

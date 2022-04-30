@@ -17,7 +17,7 @@ const AddItem = () => {
       price: event.target.price.value,
       description: event.target.description.value,
     };
-    fetch("http://localhost:5000/inventory-items", {
+    fetch("https://enigmatic-lowlands-04336.herokuapp.com/inventory-items", {
       method: "POST",
       headers: {
         "content-type": "application/json",
