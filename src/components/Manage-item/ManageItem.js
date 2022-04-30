@@ -5,6 +5,7 @@ import "./ManageItem.css";
 const ManageItem = () => {
   const [item, setItem] = useState({});
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   // console.log(item);
   const { id } = useParams();
   useEffect(() => {
@@ -16,6 +17,10 @@ const ManageItem = () => {
   // console.log(item);
   const handleQuantity = () => {
     const newItem = { ...item };
+    if (parseInt(item["quantity"]) === 0) {
+      setError("Quantity cannot be negative");
+      return;
+    }
     newItem["quantity"] = parseInt(item["quantity"]) - 1;
 
     fetch("http://localhost:5000/update", {
@@ -37,6 +42,10 @@ const ManageItem = () => {
     event.preventDefault();
 
     const number = parseInt(event.target.quantityNumber.value);
+    if (number < 0) {
+      setError("Quantity cannot be negative");
+      return;
+    }
     const newItem = { ...item };
     newItem["quantity"] = parseInt(item["quantity"]) + number;
 
@@ -86,6 +95,19 @@ const ManageItem = () => {
           margin: "30px 100px",
         }}
       />
+      {error ? (
+        <p
+          style={{
+            color: "blue",
+            textAlign: "center",
+            border: "1px solid tomato",
+          }}
+        >
+          {error}
+        </p>
+      ) : (
+        ""
+      )}
       <form onSubmit={handleQuantityUsingForm}>
         <input
           className="form-control"
