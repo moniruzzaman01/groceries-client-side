@@ -15,9 +15,8 @@ const ManageItem = () => {
   // console.log(item);
   const handleQuantity = () => {
     const newItem = { ...item };
-    newItem["quantity"] = parseInt(item["quantity"] - 1);
+    newItem["quantity"] = parseInt(item["quantity"]) - 1;
 
-    // item["quantity"] = parseInt(item["quantity"]) - 1;
     fetch("http://localhost:5000/update", {
       method: "PUT",
       headers: {
@@ -28,10 +27,33 @@ const ManageItem = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-          console.log("updatedQnty", data);
+          // console.log("updatedQnty", data);
           setItem(newItem);
         }
       });
+  };
+  const handleQuantityUsingForm = (event) => {
+    event.preventDefault();
+
+    const number = parseInt(event.target.quantityNumber.value);
+    const newItem = { ...item };
+    newItem["quantity"] = parseInt(item["quantity"]) + number;
+
+    fetch("http://localhost:5000/update", {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          // console.log("updatedQnty", data);
+          setItem(newItem);
+        }
+      });
+    event.target.reset();
   };
   return (
     <div className="manage-item-container">
@@ -63,19 +85,18 @@ const ManageItem = () => {
           margin: "30px 100px",
         }}
       />
-      <form>
+      <form onSubmit={handleQuantityUsingForm}>
         <input
           className="form-control"
           type="number"
           name="quantityNumber"
           id=""
           placeholder="Enter Number"
+          required
         />
-        <input
-          type="submit"
-          value="Submit"
-          className="btn form-btn w-100 mt-2"
-        />
+        <button type="submit" className="btn form-btn w-100 mt-2">
+          Add Quantity
+        </button>
       </form>
     </div>
   );

@@ -5,6 +5,7 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 // const firebaseConfig = {
 //   apiKey: "AIzaSyC0Y7nVbnnhLz2MmTt2oWTnDeT8bKN8Es8",
 //   authDomain: "groceries-59179.firebaseapp.com",
