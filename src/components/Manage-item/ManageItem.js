@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ManageItem.css";
 
 const ManageItem = () => {
   const [item, setItem] = useState({});
+  const navigate = useNavigate();
   // console.log(item);
   const { id } = useParams();
   useEffect(() => {
@@ -98,6 +99,17 @@ const ManageItem = () => {
           Add Quantity
         </button>
       </form>
+      <hr
+        style={{
+          margin: "30px 100px",
+        }}
+      />
+      <button
+        onClick={() => navigate("/inventories")}
+        className="btn form-btn w-100"
+      >
+        Manage All Inventories
+      </button>
     </div>
   );
 };

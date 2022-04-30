@@ -1,0 +1,9 @@
+.inventory-item-container {
+  width: 80%;
+  margin: 15vh auto 10vh auto;
+}
+@media screen and (max-width: 599px) {
+  .inventory-item-container {
+    width: 90%;
+  }
+}
