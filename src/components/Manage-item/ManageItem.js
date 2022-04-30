@@ -117,7 +117,10 @@ const ManageItem = () => {
           placeholder="Enter Number"
           required
         />
-        <button type="submit" className="btn form-btn w-100 mt-2">
+        <button
+          type="submit"
+          className="btn form-btn  w-50 mx-auto d-block mt-2"
+        >
           Add Quantity
         </button>
       </form>
@@ -127,8 +130,14 @@ const ManageItem = () => {
         }}
       />
       <button
+        onClick={() => navigate("/add-item")}
+        className="btn form-btn  w-50 mx-auto d-block"
+      >
+        Add New Item
+      </button>
+      <button
         onClick={() => navigate("/inventories")}
-        className="btn form-btn w-100"
+        className="btn form-btn mt-2 w-50 mx-auto d-block"
       >
         Manage All Inventories
       </button>
