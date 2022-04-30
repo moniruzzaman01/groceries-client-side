@@ -11,7 +11,7 @@ const Home = () => {
       <Carouseel></Carouseel>
       <h1 className="Inventory-item-header">Available Items</h1>
       <div className="home-inventory-items container mb-4">
-        {items.slice(0, 10).map((item, key) => {
+        {items.slice(0, 6).map((item, key) => {
           return (
             <div key={key} className="single-item">
               <div className="img">
@@ -24,7 +24,7 @@ const Home = () => {
                     <p>Supplier: {item.userName}</p>
                   </div>
                   <p style={{ color: "tomato" }} className="me-5">
-                    {item.price}
+                    {item.price}/-
                   </p>
                 </div>
                 <p>Quantity: {item.quantity}</p>

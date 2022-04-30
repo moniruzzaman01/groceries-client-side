@@ -17,6 +17,7 @@
   border-radius: 10px;
   transition: all 0.2s;
   padding: 15px;
+  box-shadow: 2px 2px 5px 5px #f3f3f3;
 }
 .single-item .img {
   display: flex;
@@ -26,7 +27,7 @@
   height: 250px;
 }
 .single-item:hover {
-  box-shadow: 2px 2px 5px 5px #f3f3f3;
+  box-shadow: inset -2px -2px 5px 5px #f3f3f3;
 }
 .single-item .details {
   padding: 10px;
@@ -52,6 +53,6 @@
   color: tomato;
   float: right;
   font-size: 15px;
-  margin-right: 2px;
+  margin-right: 20px;
   margin-top: -2px;
 }

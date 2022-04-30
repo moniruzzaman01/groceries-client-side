@@ -11,6 +11,8 @@ import AddItems from "./components/Add-items/AddItem";
 import ManageItem from "./components/Manage-item/ManageItem";
 import Blogs from "./components/Blogs/Blogs";
 import RequireAuth from "./components/Require-auth/RequireAuth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -48,6 +50,7 @@ function App() {
         <Route path="/sign-up" element={<SignUp />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <ToastContainer />
       <Footer />
     </div>
   );

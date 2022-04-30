@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import "./AddItem.css";
 
@@ -24,7 +25,12 @@ const AddItem = () => {
       body: JSON.stringify(productDetails),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.insertedId) {
+          toast("Product Added Successfully!!!");
+          event.target.reset();
+        }
+      });
   };
   return (
     <div className="add-item-container">
@@ -54,6 +60,7 @@ const AddItem = () => {
             name="name"
             className="form-control"
             placeholder="Product Name"
+            required
           />
         </div>
         <div className="form-group mb-3">
@@ -62,6 +69,7 @@ const AddItem = () => {
             name="quantity"
             className="form-control"
             placeholder="Product Quantity"
+            required
           />
         </div>
         <div className="form-group mb-3">
@@ -70,6 +78,7 @@ const AddItem = () => {
             name="img_url"
             className="form-control"
             placeholder="Product Image Url"
+            required
           />
         </div>
         <div className="form-group mb-3">
@@ -78,6 +87,7 @@ const AddItem = () => {
             name="price"
             className="form-control"
             placeholder="Product Price"
+            required
           />
         </div>
         <div className="form-group mb-3">
@@ -86,6 +96,7 @@ const AddItem = () => {
             name="description"
             className="form-control"
             placeholder="Product Description (short)"
+            required
           />
         </div>
         <button type="submit" className="btn form-btn">
