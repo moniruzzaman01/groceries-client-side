@@ -17,20 +17,25 @@ const MyItems = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("prod", data);
         setItems(data);
       });
   }, [user.email]);
   return (
     <div className="my-item-container">
-      <h1>My items here</h1>
-      <table className="table">
+      <h1
+        style={{
+          marginBottom: "20px",
+        }}
+      >
+        Your items{" "}
+      </h1>
+      <table className="table table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">ProductName</th>
-            <th scope="col">Price(TK)</th>
-            <th scope="col">Quantity(KG/Ltr)</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
             <th scope="col">Product Des.</th>
           </tr>
         </thead>
@@ -39,7 +44,7 @@ const MyItems = () => {
             <tr key={key}>
               <th scope="row">{key + 1}</th>
               <td>{item.itemName}</td>
-              <td>{item.price}</td>
+              <td>{item.price}/-</td>
               <td>{item.quantity}</td>
               <td>{item.description}</td>
             </tr>

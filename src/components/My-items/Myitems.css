@@ -1,6 +1,6 @@
 .my-item-container {
   width: 80%;
-  margin: 15vh auto 5vh auto;
+  margin: 15vh auto 10vh auto;
 }
 @media screen and (max-width: 599px) {
   .my-item-container {
