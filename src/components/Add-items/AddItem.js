@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import "./AddItem.css";
+import Spineer from "../Spineer/Spineer";
 
 const AddItem = () => {
+  const [loading, setLoading] = useState(false);
   const [user] = useAuthState(auth);
+
   const handleAddForm = (event) => {
     event.preventDefault();
+    setLoading(true);
     const productDetails = {
       userName: event.target.user_name.value,
       userEmail: event.target.user_email.value,
@@ -29,11 +33,13 @@ const AddItem = () => {
         if (data.insertedId) {
           toast("Product Added Successfully!!!");
           event.target.reset();
+          setLoading(false);
         }
       });
   };
   return (
     <div className="add-item-container">
+      {loading ? <Spineer /> : ""}
       <h1 style={{ marginBottom: "20px" }}>Add item here.</h1>
       <form onSubmit={handleAddForm}>
         <div className="form-group mb-3">

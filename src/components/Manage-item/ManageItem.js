@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ManageItem.css";
+import Spineer from "../Spineer/Spineer";
 
 const ManageItem = () => {
   const [item, setItem] = useState({});
   const navigate = useNavigate();
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   // console.log(item);
   const { id } = useParams();
   useEffect(() => {
@@ -16,6 +18,7 @@ const ManageItem = () => {
   }, [id]);
   // console.log(item);
   const handleQuantity = () => {
+    setLoading(true);
     const newItem = { ...item };
     if (parseInt(item["quantity"]) === 0) {
       setError("Quantity cannot be negative");
@@ -35,15 +38,20 @@ const ManageItem = () => {
         if (data.acknowledged) {
           // console.log("updatedQnty", data);
           setItem(newItem);
+          setLoading(false);
+          setError(false);
         }
       });
   };
   const handleQuantityUsingForm = (event) => {
+    setLoading(true);
     event.preventDefault();
 
     const number = parseInt(event.target.quantityNumber.value);
     if (number < 0) {
       setError("Quantity cannot be negative");
+      setLoading(false);
+      event.target.reset();
       return;
     }
     const newItem = { ...item };
@@ -61,12 +69,15 @@ const ManageItem = () => {
         if (data.acknowledged) {
           // console.log("updatedQnty", data);
           setItem(newItem);
+          setLoading(false);
+          setError(false);
         }
       });
     event.target.reset();
   };
   return (
     <div className="manage-item-container">
+      {loading ? <Spineer /> : ""}
       <h1>Manage item will be here.</h1>
       <table className="table table-striped">
         <thead>
@@ -85,7 +96,7 @@ const ManageItem = () => {
               style={{ cursor: "pointer" }}
               className="text-danger"
             >
-              Reduce Item
+              Shipped
             </td>
           </tr>
         </tbody>
