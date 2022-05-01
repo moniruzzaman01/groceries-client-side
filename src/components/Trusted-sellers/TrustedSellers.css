@@ -1,0 +1,31 @@
+.tsc {
+  text-align: center;
+  margin-bottom: 5vh;
+}
+.tsc h1 {
+  margin-bottom: 20px;
+}
+.sellers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.seller {
+  border: 1px solid #c9c9c9;
+  padding: 20px;
+  border-radius: 10px;
+}
+.seller img {
+  width: 90%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.seller p {
+  margin: 0;
+}
+
+@media screen and (max-width: 599px) {
+  .sellers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

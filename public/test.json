@@ -1,56 +1,26 @@
 [
   {
-    "id": "1",
-    "img": "https://i.ibb.co/tZQ6P3X/Rice.png",
-    "name": "rice",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
-    "price": "$20",
-    "quantity": "30",
-    "supplier_name": "Karim Mia"
+    "img": "https://i.ibb.co/0jXq0yY/ben-parker-Oh-KEl-Ok-Q3-RE-unsplash-1.jpg",
+    "sellerName": "Alex Hales",
+    "Age": "23",
+    "Address": "23/andl/bunag"
   },
   {
-    "id": "2",
-    "img": "https://i.ibb.co/qC4cL7f/Dal.png",
-    "name": "dal",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
-    "price": "$25",
-    "quantity": "20",
-    "supplier_name": "Karim Molla"
+    "img": "https://i.ibb.co/2Y25mXF/christina-wocintechchat-com-0-Zx1b-Dv5-BNY-unsplash-1-1.jpg",
+    "sellerName": "Adriana",
+    "Age": "26",
+    "Address": "shr-34/akua"
   },
   {
-    "id": "3",
-    "img": "https://i.ibb.co/CsPQWzq/Flour.png",
-    "name": "flour",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
-    "price": "$15",
-    "quantity": "10",
-    "supplier_name": "Kabir Mia"
+    "img": "https://i.ibb.co/tYmsgZM/bruce-mars-And-E50aa-Hn4-unsplash-1-1.jpg",
+    "sellerName": "Laxman kumar",
+    "Age": "23",
+    "Address": "bara/indoor"
   },
   {
-    "id": "4",
-    "img": "https://i.ibb.co/cK906sT/Fruits.png",
-    "name": "Fruit",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
-    "price": "$50",
-    "quantity": "40",
-    "supplier_name": "Tormuj Ali"
-  },
-  {
-    "id": "5",
-    "img": "https://i.ibb.co/jyXNpNz/Honey.png",
-    "name": "Honey",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
-    "price": "$65",
-    "quantity": "10",
-    "supplier_name": "Karim Mia"
-  },
-  {
-    "id": "6",
-    "img": "https://i.ibb.co/DfM6WCg/Spices.png",
-    "name": "spices",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolor ipsum labore asperiores, id quam corporis dolore inventore amet, laudantium optio minima magnam laborum nostrum qui aperiam quo animi tenetur.",
-    "price": "$20",
-    "quantity": "30",
-    "supplier_name": "Karim Molla"
+    "img": "https://i.ibb.co/f44Xdmt/joseph-gonzalez-i-Fg-Rcq-Hznqg-unsplash-1.jpg",
+    "sellerName": "Jacob",
+    "Age": "35",
+    "Address": "east-23/hels"
   }
 ]

@@ -4,6 +4,7 @@ import useInventoryItems from "../../hooks/useInventoryItems";
 import Carouseel from "../Carouseel/Carouseel";
 import { useNavigate } from "react-router-dom";
 import Spineer from "../Spineer/Spineer";
+import TrustedSellers from "../Trusted-sellers/TrustedSellers";
 
 const Home = () => {
   const [items, setItems, loading] = useInventoryItems();
@@ -13,7 +14,6 @@ const Home = () => {
     // console.log(id);
     navigate(`/manage-item/${id}`);
   };
-  console.log(loading);
   return (
     <div>
       {loading ? <Spineer /> : ""}
@@ -44,6 +44,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <TrustedSellers />
     </div>
   );
 };
