@@ -10,7 +10,7 @@ const TrustedSellers = () => {
   }, []);
   return (
     <div className="container tsc">
-      <h1>Trusted sellers.</h1>
+      <h1>Trusted sellers</h1>
       <div className="sellers">
         {sellers.map((seller, key) => (
           <div key={key} className="seller">

@@ -45,6 +45,36 @@ const Home = () => {
         ))}
       </div>
       <TrustedSellers />
+      <div className="process-container">
+        <h1
+          style={{
+            textAlign: "center",
+            paddingTop: "5vh",
+            paddingBottom: "20px",
+          }}
+        >
+          The process we work
+        </h1>
+        <div className="process">
+          <div>
+            <h1 className="mb-3">From</h1>
+            <h3>Seller</h3>
+            <small>They collect products from for you</small>
+          </div>
+          <div style={{ color: "#000" }}>to</div>
+          <div>
+            <h1 className="mb-3">via</h1>
+            <h3>Grocery</h3>
+            <small>Just a trusted medium</small>
+          </div>
+          <div style={{ color: "#000" }}>to</div>
+          <div>
+            <h1 className="mb-3">3</h1>
+            <h3>Destination</h3>
+            <small>All the things for who</small>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -56,3 +56,38 @@
   margin-right: 20px;
   margin-top: -2px;
 }
+.process-container {
+  height: 40vh;
+  background-color: tomato;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+.process {
+  /* background-color: green; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40%;
+  color: #fff;
+}
+.process div {
+  border: 1px solid #fff;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+.process div h1,
+h3,
+small {
+  margin: 0;
+}
+
+@media screen and (max-width: 599px) {
+  .process-container {
+    height: 85vh;
+  }
+  .process {
+    display: block;
+  }
+}
