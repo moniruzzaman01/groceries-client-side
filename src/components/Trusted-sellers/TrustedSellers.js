@@ -4,7 +4,7 @@ import "./TrustedSellers.css";
 const TrustedSellers = () => {
   const [sellers, setSellers] = useState([]);
   useEffect(() => {
-    fetch("test.json")
+    fetch("https://enigmatic-lowlands-04336.herokuapp.com/sellers")
       .then((res) => res.json())
       .then((data) => setSellers(data));
   }, []);
