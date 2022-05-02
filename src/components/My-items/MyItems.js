@@ -8,20 +8,23 @@ const MyItems = () => {
   const [items, setItems] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+
   useEffect(() => {
-    const email = { userEmail: user.email };
-    fetch("https://enigmatic-lowlands-04336.herokuapp.com/itemsByEmail", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(email),
-    })
+    const email = user.email;
+    fetch(
+      `https://enigmatic-lowlands-04336.herokuapp.com/itemsByEmail?email=${email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
       });
   }, [user.email]);
+
   return (
     <div className="my-item-container">
       <div className="d-flex justify-content-between align-items-center">

@@ -18,29 +18,42 @@ const Login = () => {
     useSendPasswordResetEmail(auth);
 
   const [email, setEmail] = useState("");
-
   const [authUser, authLoading] = useAuthState(auth);
   const location = useLocation();
   const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    // const email = event.target.email.value;
     const password = event.target.pass.value;
 
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    fetch("https://enigmatic-lowlands-04336.herokuapp.com/login", {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.accessToken);
+      });
   };
+
   const handleResetPass = async () => {
     await sendPasswordResetEmail(email);
     toast("password reset email sended!");
   };
+
   if (authLoading) {
     return <Spineer />;
   }
+
   if (authUser) {
     navigate(from, { replace: true });
   }
+
   return (
     <div className="login-form-container">
       <h1>Please Login Here!!!</h1>
