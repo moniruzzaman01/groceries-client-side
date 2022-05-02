@@ -13,6 +13,7 @@ const InventoryItems = () => {
 
   const handleDelete = (id) => {
     const answer = window.confirm("Are yoy sure?");
+
     if (answer) {
       setLoading(true);
       fetch(`https://enigmatic-lowlands-04336.herokuapp.com/deleteById/${id}`, {
@@ -29,6 +30,7 @@ const InventoryItems = () => {
         });
     }
   };
+
   return (
     <div className="inventory-item-container">
       {loading ? <Spineer /> : ""}

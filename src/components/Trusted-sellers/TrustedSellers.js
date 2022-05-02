@@ -3,11 +3,13 @@ import "./TrustedSellers.css";
 
 const TrustedSellers = () => {
   const [sellers, setSellers] = useState([]);
+
   useEffect(() => {
     fetch("https://enigmatic-lowlands-04336.herokuapp.com/sellers")
       .then((res) => res.json())
       .then((data) => setSellers(data));
   }, []);
+
   return (
     <div className="container tsc">
       <h1>Trusted sellers</h1>

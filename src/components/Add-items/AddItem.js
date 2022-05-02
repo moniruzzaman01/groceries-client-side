@@ -12,6 +12,7 @@ const AddItem = () => {
   const handleAddForm = (event) => {
     event.preventDefault();
     setLoading(true);
+
     const productDetails = {
       userName: event.target.user_name.value,
       userEmail: event.target.user_email.value,
@@ -37,6 +38,7 @@ const AddItem = () => {
         }
       });
   };
+
   return (
     <div className="add-item-container">
       {loading ? <Spineer /> : ""}

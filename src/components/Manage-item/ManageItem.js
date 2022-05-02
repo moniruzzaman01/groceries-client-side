@@ -75,6 +75,7 @@ const ManageItem = () => {
       });
     event.target.reset();
   };
+
   return (
     <div className="manage-item-container">
       {loading ? <Spineer /> : ""}
