@@ -40,78 +40,80 @@ const AddItem = () => {
   };
 
   return (
-    <div className="add-item-container">
+    <>
       {loading ? <Spineer /> : ""}
-      <h1 style={{ marginBottom: "20px" }}>Add item here.</h1>
-      <form onSubmit={handleAddForm}>
-        <div className="form-group mb-3">
-          <input
-            type="text"
-            name="user_name"
-            className="form-control"
-            disabled
-            value={user?.displayName || user.email.split("@")[0]}
-          />
-        </div>
-        <div className="form-group mb-3">
-          <input
-            type="email"
-            name="user_email"
-            className="form-control"
-            disabled
-            value={user.email}
-          />
-        </div>
-        <div className="form-group mb-3">
-          <input
-            type="text"
-            name="name"
-            className="form-control"
-            placeholder="Product Name"
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <input
-            type="number"
-            name="quantity"
-            className="form-control"
-            placeholder="Product Quantity"
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <input
-            type="text"
-            name="img_url"
-            className="form-control"
-            placeholder="Product Image Url"
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <input
-            type="number"
-            name="price"
-            className="form-control"
-            placeholder="Product Price"
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <textarea
-            type="text"
-            name="description"
-            className="form-control"
-            placeholder="Product Description (short)"
-            required
-          />
-        </div>
-        <button type="submit" className="btn form-btn">
-          Add
-        </button>
-      </form>
-    </div>
+      <div className="add-item-container">
+        <h1 style={{ marginBottom: "20px" }}>Add item here.</h1>
+        <form onSubmit={handleAddForm}>
+          <div className="form-group mb-3">
+            <input
+              type="text"
+              name="user_name"
+              className="form-control"
+              disabled
+              value={user?.displayName || user.email.split("@")[0]}
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="email"
+              name="user_email"
+              className="form-control"
+              disabled
+              value={user.email}
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="text"
+              name="name"
+              className="form-control"
+              placeholder="Product Name"
+              required
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="number"
+              name="quantity"
+              className="form-control"
+              placeholder="Product Quantity"
+              required
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="text"
+              name="img_url"
+              className="form-control"
+              placeholder="Product Image Url"
+              required
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="number"
+              name="price"
+              className="form-control"
+              placeholder="Product Price"
+              required
+            />
+          </div>
+          <div className="form-group mb-3">
+            <textarea
+              type="text"
+              name="description"
+              className="form-control"
+              placeholder="Product Description (short)"
+              required
+            />
+          </div>
+          <button type="submit" className="btn form-btn">
+            Add
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 

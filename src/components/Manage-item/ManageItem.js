@@ -77,83 +77,85 @@ const ManageItem = () => {
   };
 
   return (
-    <div className="manage-item-container">
+    <>
       {loading ? <Spineer /> : ""}
-      <h1>Manage item will be here.</h1>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Manage</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{item.itemName}</td>
-            <td>{item.quantity}</td>
-            <td
-              onClick={handleQuantity}
-              style={{ cursor: "pointer" }}
-              className="text-danger"
-            >
-              Shipped
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <hr
-        style={{
-          margin: "30px 100px",
-        }}
-      />
-      {error ? (
-        <p
+      <div className="manage-item-container">
+        <h1>Manage item will be here.</h1>
+        <table className="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Manage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{item.itemName}</td>
+              <td>{item.quantity}</td>
+              <td
+                onClick={handleQuantity}
+                style={{ cursor: "pointer" }}
+                className="text-danger"
+              >
+                Shipped
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <hr
           style={{
-            color: "blue",
-            textAlign: "center",
-            border: "1px solid tomato",
+            margin: "30px 100px",
           }}
-        >
-          {error}
-        </p>
-      ) : (
-        ""
-      )}
-      <form onSubmit={handleQuantityUsingForm}>
-        <input
-          className="form-control"
-          type="number"
-          name="quantityNumber"
-          id=""
-          placeholder="Enter Number"
-          required
+        />
+        {error ? (
+          <p
+            style={{
+              color: "blue",
+              textAlign: "center",
+              border: "1px solid tomato",
+            }}
+          >
+            {error}
+          </p>
+        ) : (
+          ""
+        )}
+        <form onSubmit={handleQuantityUsingForm}>
+          <input
+            className="form-control"
+            type="number"
+            name="quantityNumber"
+            id=""
+            placeholder="Enter Number"
+            required
+          />
+          <button
+            type="submit"
+            className="btn form-btn  w-50 mx-auto d-block mt-2"
+          >
+            Add Quantity
+          </button>
+        </form>
+        <hr
+          style={{
+            margin: "30px 100px",
+          }}
         />
         <button
-          type="submit"
-          className="btn form-btn  w-50 mx-auto d-block mt-2"
+          onClick={() => navigate("/add-item")}
+          className="btn form-btn  w-50 mx-auto d-block"
         >
-          Add Quantity
+          Add New Item
         </button>
-      </form>
-      <hr
-        style={{
-          margin: "30px 100px",
-        }}
-      />
-      <button
-        onClick={() => navigate("/add-item")}
-        className="btn form-btn  w-50 mx-auto d-block"
-      >
-        Add New Item
-      </button>
-      <button
-        onClick={() => navigate("/inventories")}
-        className="btn form-btn mt-2 w-50 mx-auto d-block"
-      >
-        Manage All Inventories
-      </button>
-    </div>
+        <button
+          onClick={() => navigate("/inventories")}
+          className="btn form-btn mt-2 w-50 mx-auto d-block"
+        >
+          Manage All Inventories
+        </button>
+      </div>
+    </>
   );
 };
 

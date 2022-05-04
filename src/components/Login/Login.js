@@ -55,75 +55,77 @@ const Login = () => {
   }
 
   return (
-    <div className="login-form-container">
-      <h1>Please Login Here!!!</h1>
-      <form onSubmit={handleFormSubmit}>
-        <div className="form-group mb-3">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input
-            onBlur={(e) => setEmail(e.target.value)}
-            type="email"
-            name="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Enter email"
-            required
-          />
-        </div>
-        <div className="form-group mb-3">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            name="pass"
-            className="form-control"
-            id="exampleInputPassword1"
-            placeholder="Password"
-            required
-          />
-        </div>
-        <p>
-          Forgot password?{" "}
-          <span
-            onClick={handleResetPass}
-            style={{
-              color: "blue",
-              textDecoration: "underline",
-              cursor: "pointer",
-            }}
-          >
-            reset password
-          </span>
-        </p>
-        <p>
-          New in groceries?{" "}
-          <Link className="link" to="/sign-up">
-            Create an account
-          </Link>
-        </p>
-        {loading ? <Spineer /> : ""}
-        {error ? (
-          <p
-            style={{
-              color: "blue",
-            }}
-          >
-            {error.message}
+    <>
+      {loading ? <Spineer /> : ""}
+      <div className="login-form-container">
+        <h1>Please Login Here!!!</h1>
+        <form onSubmit={handleFormSubmit}>
+          <div className="form-group mb-3">
+            <label htmlFor="exampleInputEmail1">Email address</label>
+            <input
+              onBlur={(e) => setEmail(e.target.value)}
+              type="email"
+              name="email"
+              className="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div className="form-group mb-3">
+            <label htmlFor="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              name="pass"
+              className="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <p>
+            Forgot password?{" "}
+            <span
+              onClick={handleResetPass}
+              style={{
+                color: "blue",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}
+            >
+              reset password
+            </span>
           </p>
-        ) : (
-          ""
-        )}
-        <button type="submit" className="btn form-btn">
-          Login
-        </button>
-      </form>
-      <div className="d-flex justify-content-center align-items-center my-4">
-        <div className="separator"></div>
-        <div className="mx-2">or</div>
-        <div className="separator"></div>
+          <p>
+            New in groceries?{" "}
+            <Link className="link" to="/sign-up">
+              Create an account
+            </Link>
+          </p>
+          {error ? (
+            <p
+              style={{
+                color: "blue",
+              }}
+            >
+              {error.message}
+            </p>
+          ) : (
+            ""
+          )}
+          <button type="submit" className="btn form-btn">
+            Login
+          </button>
+        </form>
+        <div className="d-flex justify-content-center align-items-center my-4">
+          <div className="separator"></div>
+          <div className="mx-2">or</div>
+          <div className="separator"></div>
+        </div>
+        <SocialLogin />
       </div>
-      <SocialLogin />
-    </div>
+    </>
   );
 };
 

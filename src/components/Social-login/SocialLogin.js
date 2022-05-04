@@ -17,23 +17,25 @@ const SocialLogin = () => {
     navigate(from, { replace: true });
   }
   return (
-    <div>
+    <>
       {loading ? <Spineer /> : ""}
-      {error ? (
-        <p
-          style={{
-            color: "blue",
-          }}
-        >
-          {error.message}
-        </p>
-      ) : (
-        ""
-      )}
-      <button className="btn form-btn" onClick={handleGoogleSignIn}>
-        GoogleSignIn
-      </button>
-    </div>
+      <div>
+        {error ? (
+          <p
+            style={{
+              color: "blue",
+            }}
+          >
+            {error.message}
+          </p>
+        ) : (
+          ""
+        )}
+        <button className="btn form-btn" onClick={handleGoogleSignIn}>
+          GoogleSignIn
+        </button>
+      </div>
+    </>
   );
 };
 

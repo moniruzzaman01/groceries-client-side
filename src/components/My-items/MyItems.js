@@ -60,58 +60,63 @@ const MyItems = () => {
     setDialog(false);
   };
   return (
-    <div className="my-item-container">
-      {dialog && (
-        <DialogBox
-          confirmBtnHandle={handleDialogConfirmBtn}
-          cancelBtnHandle={handleDialogCancelmBtn}
-        ></DialogBox>
-      )}
+    <>
       {loading ? <Spineer /> : ""}
-      <div className="d-flex justify-content-between align-items-center">
-        <h1
-          style={{
-            marginBottom: "20px",
-          }}
-        >
-          Your items
-        </h1>
-        <button onClick={() => navigate("/add-item")} className="btn form-btn">
-          Add a item
-        </button>
-      </div>
-      <div className="table-responsive">
-        <table className="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Name</th>
-              <th scope="col">Price</th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Product Des.</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {items.map((item, key) => (
-              <tr key={key}>
-                <th scope="row">{key + 1}</th>
-                <td>{item.itemName}</td>
-                <td>{item.price}/-</td>
-                <td>{item.quantity}</td>
-                <td>{item.description}</td>
-                <td
-                  onClick={() => handleDelete(item._id)}
-                  style={{ color: "tomato", cursor: "pointer" }}
-                >
-                  Delete
-                </td>
+      <div className="my-item-container">
+        {dialog && (
+          <DialogBox
+            confirmBtnHandle={handleDialogConfirmBtn}
+            cancelBtnHandle={handleDialogCancelmBtn}
+          ></DialogBox>
+        )}
+        <div className="d-flex justify-content-between align-items-center">
+          <h1
+            style={{
+              marginBottom: "20px",
+            }}
+          >
+            Your items
+          </h1>
+          <button
+            onClick={() => navigate("/add-item")}
+            className="btn form-btn"
+          >
+            Add a item
+          </button>
+        </div>
+        <div className="table-responsive">
+          <table className="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Product Des.</th>
+                <th scope="col">Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {items.map((item, key) => (
+                <tr key={key}>
+                  <th scope="row">{key + 1}</th>
+                  <td>{item.itemName}</td>
+                  <td>{item.price}/-</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.description}</td>
+                  <td
+                    onClick={() => handleDelete(item._id)}
+                    style={{ color: "tomato", cursor: "pointer" }}
+                  >
+                    Delete
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
