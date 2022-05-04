@@ -5,34 +5,52 @@ import "./InventoryItems.css";
 import Spineer from "../Spineer/Spineer";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import DialogBox from "../Dialog-box/DialogBox";
 
 const InventoryItems = () => {
   const [items, setItems] = useInventoryItems();
   const [loading, setLoading] = useState(false);
   const [user] = useAuthState(auth);
+  const [deletedId, setDeletedId] = useState("");
+  const [dialog, setDialog] = useState(false);
 
   const handleDelete = (id) => {
-    const answer = window.confirm("Are yoy sure?");
+    setDialog(true);
+    setDeletedId(id);
+  };
 
-    if (answer) {
-      setLoading(true);
-      fetch(`https://enigmatic-lowlands-04336.herokuapp.com/deleteById/${id}`, {
+  const handleDialogConfirmBtn = () => {
+    setLoading(true);
+    fetch(
+      `https://enigmatic-lowlands-04336.herokuapp.com/deleteById/${deletedId}`,
+      {
         method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.deletedCount === 1) {
-            toast("item deleted successfully!");
-            const rest = items.filter((item) => item._id !== id);
-            setItems(rest);
-            setLoading(false);
-          }
-        });
-    }
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount === 1) {
+          toast("item deleted successfully!");
+          const rest = items.filter((item) => item._id !== deletedId);
+          setItems(rest);
+          setLoading(false);
+        }
+      });
+    setDialog(false);
+  };
+
+  const handleDialogCancelmBtn = () => {
+    setDialog(false);
   };
 
   return (
     <div className="inventory-item-container">
+      {dialog && (
+        <DialogBox
+          confirmBtnHandle={handleDialogConfirmBtn}
+          cancelBtnHandle={handleDialogCancelmBtn}
+        ></DialogBox>
+      )}
       {loading ? <Spineer /> : ""}
       <h1
         style={{
