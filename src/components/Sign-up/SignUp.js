@@ -30,8 +30,7 @@ const SignUp = () => {
   };
 
   if (token) {
-    console.log("emailFrom", user?.user?.email);
-    // navigate(from, { replace: true });
+    navigate(from, { replace: true });
   }
   return (
     <>
