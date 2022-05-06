@@ -5,7 +5,7 @@ const TrustedSellers = () => {
   const [sellers, setSellers] = useState([]);
 
   useEffect(() => {
-    fetch("https://enigmatic-lowlands-04336.herokuapp.com/sellers")
+    fetch("http://localhost:5000/sellers")
       .then((res) => res.json())
       .then((data) => setSellers(data));
   }, []);

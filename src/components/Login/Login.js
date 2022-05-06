@@ -28,7 +28,7 @@ const Login = () => {
     const password = event.target.pass.value;
 
     await signInWithEmailAndPassword(email, password);
-    fetch("https://enigmatic-lowlands-04336.herokuapp.com/login", {
+    fetch("http://localhost:5000/login", {
       method: "post",
       headers: {
         "content-type": "application/json",

@@ -73,7 +73,7 @@ const Home = () => {
             <div style={{ color: "#000" }}>to</div>
             <div>
               <h1 className="mb-3">You</h1>
-              <h3>Destination</h3>
+              <h3>Customers</h3>
               <small>All the things for who</small>
             </div>
           </div>

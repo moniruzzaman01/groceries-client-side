@@ -13,8 +13,9 @@ const Footer = () => {
         </div>
       </div>
       <p className="copyright">
-        Copyright-<span className="name">Moniruzzaman</span>{" "}
-        <span style={{ color: "tomato" }}>@{year}</span>
+        Copyright©
+        <span style={{ color: "tomato" }}>{year}</span>{" "}
+        <span>Moniruzzaman</span>
       </p>
     </footer>
   );

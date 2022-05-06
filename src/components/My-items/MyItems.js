@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -17,18 +18,16 @@ const MyItems = () => {
 
   useEffect(() => {
     const email = user.email;
-    fetch(
-      `https://enigmatic-lowlands-04336.herokuapp.com/itemsByEmail?email=${email}`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
+    fetch(`http://localhost:5000/itemsByEmail?email=${email}`, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setItems(data);
-      });
+      })
+      .catch((err) => signOut(auth));
   }, [user.email]);
 
   const handleDelete = (id) => {
@@ -38,12 +37,9 @@ const MyItems = () => {
 
   const handleDialogConfirmBtn = () => {
     setLoading(true);
-    fetch(
-      `https://enigmatic-lowlands-04336.herokuapp.com/deleteById/${deletedId}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`http://localhost:5000/deleteById/${deletedId}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount === 1) {

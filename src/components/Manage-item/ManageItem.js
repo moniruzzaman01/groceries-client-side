@@ -11,7 +11,7 @@ const ManageItem = () => {
   // console.log(item);
   const { id } = useParams();
   useEffect(() => {
-    const url = `https://enigmatic-lowlands-04336.herokuapp.com/itemsById/${id}`;
+    const url = `http://localhost:5000/itemsById/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItem(data));
@@ -26,7 +26,7 @@ const ManageItem = () => {
     }
     newItem["quantity"] = parseInt(item["quantity"]) - 1;
 
-    fetch("https://enigmatic-lowlands-04336.herokuapp.com/update", {
+    fetch("http://localhost:5000/update", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -57,7 +57,7 @@ const ManageItem = () => {
     const newItem = { ...item };
     newItem["quantity"] = parseInt(item["quantity"]) + number;
 
-    fetch("https://enigmatic-lowlands-04336.herokuapp.com/update", {
+    fetch("http://localhost:5000/update", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
