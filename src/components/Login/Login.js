@@ -10,10 +10,12 @@ import {
 } from "react-firebase-hooks/auth";
 import Spineer from "../Spineer/Spineer";
 import { toast } from "react-toastify";
+import useToken from "../../hooks/useToken";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user);
   const [sendPasswordResetEmail, sending, ResetError] =
     useSendPasswordResetEmail(auth);
 
@@ -28,17 +30,6 @@ const Login = () => {
     const password = event.target.pass.value;
 
     await signInWithEmailAndPassword(email, password);
-    fetch("https://enigmatic-lowlands-04336.herokuapp.com/login", {
-      method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        localStorage.setItem("accessToken", data.accessToken);
-      });
   };
 
   const handleResetPass = async () => {
@@ -50,7 +41,7 @@ const Login = () => {
     return <Spineer />;
   }
 
-  if (authUser) {
+  if (token) {
     navigate(from, { replace: true });
   }
 

@@ -6,12 +6,14 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import Spineer from "../Spineer/Spineer";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
+import useToken from "../../hooks/useToken";
 
 const SignUp = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, {
       sendEmailVerification: true,
     });
+  const [token] = useToken(user);
   const [updateProfile, updating] = useUpdateProfile(auth);
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,8 +28,10 @@ const SignUp = () => {
     await createUserWithEmailAndPassword(email, password);
     updateProfile({ displayName: name });
   };
-  if (user) {
-    navigate(from, { replace: true });
+
+  if (token) {
+    console.log("emailFrom", user?.user?.email);
+    // navigate(from, { replace: true });
   }
   return (
     <>
