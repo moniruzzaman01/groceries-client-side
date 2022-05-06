@@ -21,9 +21,12 @@ const InventoryItems = () => {
 
   const handleDialogConfirmBtn = () => {
     setLoading(true);
-    fetch(`http://localhost:5000/deleteById/${deletedId}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://enigmatic-lowlands-04336.herokuapp.com/deleteById/${deletedId}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount === 1) {
