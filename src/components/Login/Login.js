@@ -41,7 +41,7 @@ const Login = () => {
     return <Spineer />;
   }
 
-  if (token) {
+  if (token || authUser) {
     navigate(from, { replace: true });
   }
 
