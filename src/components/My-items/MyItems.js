@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -17,18 +18,29 @@ const MyItems = () => {
 
   useEffect(() => {
     const email = user.email;
-    fetch(
-      `https://enigmatic-lowlands-04336.herokuapp.com/itemsByEmail?email=${email}`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
+    const getToken = async () => {
+      const response = await fetch(
+        `https://enigmatic-lowlands-04336.herokuapp.com/itemsByEmail?email=${email}`,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      );
+      if (response.status === 200) {
+        const data = await response.json();
+        return setItems(data);
       }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setItems(data);
-      });
+      signOut(auth);
+      navigate("/");
+      return toast("Wrong access token. LOGIN Again!!!");
+
+      // .then((res) => res.json())
+      // .then((data) => {
+      //   setItems(data);
+      // })
+    };
+    getToken();
   }, [user.email]);
 
   const handleDelete = (id) => {
